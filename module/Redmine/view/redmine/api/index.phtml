@@ -1,0 +1,28 @@
+ <?php
+ 
+ $title = 'My Projects';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+ <table class="table">
+ <tr>
+     <th>Project ID</th>
+     <th>Project Identifier</th>
+     <th>Project Name</th>
+     <th>Created Date</th>
+     <th>Updated Date</th>
+     <th>Description</th>
+ </tr>
+ <?php foreach ($projects as $project) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($project->id);?></td>
+     <td><?php echo $this->escapeHtml($project->identifier);?></td>
+     <td><?php echo $this->escapeHtml($project->name);?></td>
+     <td><?php echo $this->escapeHtml($project->createdOn);?></td>
+     <td><?php echo $this->escapeHtml($project->updatedOn);?></td>
+     <td><?php echo $this->escapeHtml($project->description);?></td>
+     
+ </tr>
+ <?php endforeach; ?>
+ </table>
